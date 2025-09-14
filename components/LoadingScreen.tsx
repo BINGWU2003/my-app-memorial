@@ -56,10 +56,10 @@ export default function LoadingScreen() {
         </div>
 
         {/* 装饰元素 */}
-        <div className="flex justify-center space-x-4 text-pink-300">
-          <div className="animate-bounce delay-0">💕</div>
-          <div className="animate-bounce delay-150">💖</div>
-          <div className="animate-bounce delay-300">💕</div>
+        <div className="flex justify-center space-x-4 text-pink-400">
+          <Heart size={24} className="animate-bounce delay-0 fill-current" />
+          <Heart size={24} className="animate-bounce delay-150 fill-current" />
+          <Heart size={24} className="animate-bounce delay-300 fill-current" />
         </div>
       </div>
     </div>

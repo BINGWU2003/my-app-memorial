@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Calendar, Sparkles, Mail, X, Volume2, VolumeX } from "lucide-react";
+import { Heart, Calendar, Sparkles, Mail, X, Volume2, VolumeX, Infinity } from "lucide-react";
 import HeartAnimation from "@/components/HeartAnimation";
 import LoadingScreen from "@/components/LoadingScreen";
 
@@ -18,21 +18,23 @@ export default function Home() {
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
 
   // 情书内容
-  const loveLetter = `亲爱的你：
+  const loveLetter = `亲爱的周周：
 
-时间过得真快，我们已经在一起整整一年了。这一年来，每一天都因为有你而变得格外珍贵和美好。
-
-还记得我们第一次相遇的那个午后吗？阳光透过咖啡厅的窗户洒在你的脸上，你轻声细语地说话，那一刻我就知道，你就是我一直在等的那个人。
+时间过得真快，我们已经在一起整整一年啦！这一年来，每一天都因为有你而变得格外珍贵和美好。
 
 这一年里，我们一起看过日出日落，走过春夏秋冬。你的笑容是我每天最期待的阳光，你的拥抱是我最安心的港湾。无论是开心的时候还是难过的时候，有你在身边，一切都变得有意义。
 
-谢谢你包容我的小脾气，理解我的小任性，陪伴我度过每一个平凡却又不平凡的日子。你让我明白了什么是真正的爱情，什么是想要共度一生的感觉。
+还记得第一次表白的时候，你害羞的样子真的好可爱，我到现在都还记得，你当时比我还害羞哈哈哈哈哈。
+
+我们很少很少吵架哈哈哈，虽然偶尔也会吵，但是很快就和好了，我感觉这个点做的非常好，希望我们以后也能一直这样。
+
+现在见面的日子从原来的一周一次，变成了一两个月见几次，挺难受，我会珍惜见面的机会，珍惜和你在一起的每一天。
 
 在我们的一周年纪念日里，我想对你说：我爱你，不只是今天，不只是这一年，而是余生的每一天。愿我们的爱情像这美好的时光一样，永远甜蜜，永远温暖。
 
-未来的路还很长，但只要有你在身边，我就有勇气走过任何风雨。让我们一起创造更多美好的回忆，一起走向属于我们的未来。
+未来的路还很长，让我们一起创造更多美好的回忆，一起走向属于我们的未来。
 
-爱你的人
+爱你的胡胡
 ❤️ 永远`;
 
   useEffect(() => {
@@ -205,7 +207,7 @@ export default function Home() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <Mail className="text-amber-600" size={24} />
-                  <h3 className="text-lg font-semibold text-amber-800">给你的情书</h3>
+                  <h3 className="text-lg font-semibold text-amber-800">给周周的情书</h3>
                 </div>
                 <div className="flex items-center space-x-2">
                   {isTyping && (
@@ -236,8 +238,9 @@ export default function Home() {
             {/* 信纸内容 */}
             <div className="p-6 overflow-y-auto max-h-[calc(80vh-100px)]">
               <div className="space-y-4">
-                <div className="text-right text-sm text-amber-600 mb-4">
-                  📅 我们的一周年纪念日
+                <div className="flex items-center justify-end text-sm text-amber-600 mb-4">
+                  <Calendar size={14} className="mr-1" />
+                  <span>我们的一周年纪念日</span>
                 </div>
 
                 <div className="whitespace-pre-line text-gray-800 leading-relaxed font-medium text-sm min-h-[200px]">
@@ -266,23 +269,23 @@ export default function Home() {
           <div className="text-center space-y-4">
             <div className="relative">
               <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-                我们的一周年
+                送给周周的情书
               </h1>
               <Sparkles className="absolute -top-2 -right-2 text-pink-400 w-6 h-6 animate-pulse" />
             </div>
-            <p className="text-gray-600 text-lg">
-              365天的甜蜜时光 ❤️
-            </p>
+
           </div>
 
           <Card className="p-6 text-center bg-gradient-to-br from-pink-50 to-purple-50 border-pink-200">
             <div className="space-y-4">
-              <div className="text-6xl animate-pulse">💕</div>
+              <div className="flex justify-center">
+                <Heart size={64} className="text-pink-500 fill-pink-500 animate-pulse" />
+              </div>
               <h2 className="text-2xl font-semibold text-gray-800">
                 爱你每一天
               </h2>
               <p className="text-gray-600">
-                从相遇到相爱，每一个瞬间都值得珍藏
+                不知不觉我们已经在一起一年了啦！
               </p>
               <Button
                 onClick={openLetter}
@@ -301,8 +304,10 @@ export default function Home() {
               <div className="text-sm text-gray-600">相爱天数</div>
             </Card>
             <Card className="p-4 text-center bg-purple-50 border-purple-200">
-              <Heart className="mx-auto mb-2 text-purple-500" size={24} />
-              <div className="text-2xl font-bold text-purple-600">∞</div>
+              <div className="flex justify-center mb-2">
+                <Infinity className="text-purple-500" size={24} />
+              </div>
+              <div className="text-2xl font-bold text-purple-600">无限</div>
               <div className="text-sm text-gray-600">爱你程度</div>
             </Card>
           </div>
